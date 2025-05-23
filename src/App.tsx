@@ -4,7 +4,14 @@ import UserForm from "./components/UserForm";
 import UserList from './components/UserList';
 
 const App = () => {
-  const [users, setUsers] = useState<{ name: string; age: number }[]>([]);
+  //const [users, setUsers] = useState<{ name: string; age: number }[]>([]);
+  
+  const userList = [
+  { name: 'Carlos', age: 30 },
+  { name: 'Ana', age: 25 },
+  { name: 'Beatriz', age: 28 },
+  { name: 'David', age: 35 }
+];
 
 
   return (
@@ -16,7 +23,7 @@ const App = () => {
       </nav>
       <Routes>
         <Route path="/" element={<UserForm  />} />
-        <Route path="/user-list" element={<UserList users={users} />} />
+        <Route path="/user-list" element={<UserList users={userList} />} />
       </Routes>
     </Router>
   );

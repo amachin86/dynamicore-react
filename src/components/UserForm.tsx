@@ -1,6 +1,7 @@
 import React from 'react';
-import './UserForm.css'; // Asegúrate de que el archivo CSS esté importado
-import { TextField, Button, Typography, Box } from '@mui/material';
+
+import { TextField, Button, Typography, Box, Container, Paper } from '@mui/material';
+import { green } from '@mui/material/colors';
 
 const UserForm = () => {
   const [name, setName] = React.useState('');
@@ -18,22 +19,16 @@ const UserForm = () => {
   };
 
   return (    
-    <div className="form-container">  
-        <Box sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            maxWidth: 400, 
-            margin: 'auto', 
-            padding: 2, 
-            textAlign: 'center', 
-            backgroundColor: '#f0f0f0', // Light gray background
-            borderRadius: '8px' // Rounded borders
-        }}>
+   
+   <Container maxWidth="sm">
+      <Paper elevation={3} sx={{ borderRadius: 2, padding: 3, mt: 8 }}>
+        <Box sx={{ textAlign: 'center' }}>
+            <Typography variant="h4" gutterBottom>
+               Datos de usuario
+            </Typography>
           <form onSubmit={handleSubmit}>
             <TextField
-              label="Nombre"
+              label="Nombre *"
               variant="outlined"
               fullWidth
               margin="normal"
@@ -41,7 +36,7 @@ const UserForm = () => {
               onChange={(e) => setName(e.target.value)}
             />
             <TextField
-              label="Email"
+              label="Email *"
               variant="outlined"
               fullWidth
               margin="normal"
@@ -53,14 +48,16 @@ const UserForm = () => {
             </Button>
           </form>
           {submittedData && (
-            <Typography variant="h6" sx={{ marginTop: 2, color: '#90ee90' }}>
+            <Typography variant="h6" sx={{ marginTop: 2, color: green[400] }}>
               Datos ingresados: <br/>
                 Nombre: {submittedData.name} <br/>
                 Email: {submittedData.email}
             </Typography>
           )}
         </Box>
-    </div>
+      </Paper>
+    </Container>
+   
   );
 };
 
