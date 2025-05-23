@@ -6,7 +6,7 @@ import { green } from '@mui/material/colors';
 const UserForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [submittedData, setSubmittedData] = React.useState<{ name: string; email: string } | null>(null);
+  const [submittedData, setSubmittedData] = useState<{ name: string; email: string } | null>(null);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
