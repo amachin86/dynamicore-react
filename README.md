@@ -1,4 +1,3 @@
-# Project Title
 
 ## Project Setup
 
