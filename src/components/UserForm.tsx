@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { TextField, Button, Typography, Box, Container, Paper } from '@mui/material';
 import { green } from '@mui/material/colors';
 
 const UserForm = () => {
-  const [name, setName] = React.useState('');
-  const [email, setEmail] = React.useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [submittedData, setSubmittedData] = React.useState<{ name: string; email: string } | null>(null);
 
   const handleSubmit = (event: React.FormEvent) => {
