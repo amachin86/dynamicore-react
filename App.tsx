@@ -6,9 +6,6 @@ import UserList from './src/components/UserList';
 const App = () => {
   const [users, setUsers] = useState<{ name: string; age: number }[]>([]);
 
-  const addUser = (name: string, age: number) => {
-    setUsers((prevUsers) => [...prevUsers, { name, age }]);
-  };
 
   return (
     <Router>
