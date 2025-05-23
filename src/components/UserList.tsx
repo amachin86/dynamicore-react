@@ -16,6 +16,7 @@ const UserList = ({ users }: UserListProps) => {
   }, [users]);
 
   return (
+    <div className="centered">
     <List>
       {sortedUsers.map((user, index) => (
         <ListItem key={index}>
@@ -23,6 +24,7 @@ const UserList = ({ users }: UserListProps) => {
         </ListItem>
       ))}
     </List>
+    </div>
   );
 };
 

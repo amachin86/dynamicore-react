@@ -65,4 +65,10 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+  .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta según sea necesario */
+}
 }
