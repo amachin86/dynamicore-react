@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import { TextField, Button, Typography, Box, Container, Paper } from '@mui/material';
+import React from 'react';
+import './UserForm.css'; // Asegúrate de que el archivo CSS esté importado
+import { TextField, Button, Typography, Box } from '@mui/material';
 
 const UserForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [submittedData, setSubmittedData] = useState<{ name: string; email: string } | null>(null);
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [submittedData, setSubmittedData] = React.useState<{ name: string; email: string } | null>(null);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -17,7 +18,7 @@ const UserForm = () => {
   };
 
   return (    
-    <div className="centered">  
+    <div className="form-container">  
         <Box sx={{
             display: 'flex',
             flexDirection: 'column',
@@ -38,7 +39,6 @@ const UserForm = () => {
               margin="normal"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              
             />
             <TextField
               label="Email"
@@ -47,7 +47,6 @@ const UserForm = () => {
               margin="normal"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              
             />
             <Button type="submit" variant="contained" color="primary" fullWidth>
               Enviar
@@ -61,8 +60,7 @@ const UserForm = () => {
             </Typography>
           )}
         </Box>
-       </div>
-    
+    </div>
   );
 };
 
